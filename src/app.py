@@ -8,7 +8,7 @@ from flask_swagger import swagger
 from flask_cors import CORS
 from utils import APIException, generate_sitemap
 from admin import setup_admin
-from models import db, User
+from models import db, Usuario
 #from models import Person
 
 app = Flask(__name__)
@@ -25,6 +25,7 @@ MIGRATE = Migrate(app, db)
 db.init_app(app)
 CORS(app)
 setup_admin(app)
+import main
 
 # Handle/serialize errors like a JSON object
 @app.errorhandler(APIException)
